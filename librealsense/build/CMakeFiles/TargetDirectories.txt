@@ -1,0 +1,7 @@
+/home/tim/librealsense/guiding-eyes/build/CMakeFiles/rebuild_cache.dir
+/home/tim/librealsense/guiding-eyes/build/CMakeFiles/install/local.dir
+/home/tim/librealsense/guiding-eyes/build/CMakeFiles/camera-motor.dir
+/home/tim/librealsense/guiding-eyes/build/CMakeFiles/install.dir
+/home/tim/librealsense/guiding-eyes/build/CMakeFiles/install/strip.dir
+/home/tim/librealsense/guiding-eyes/build/CMakeFiles/edit_cache.dir
+/home/tim/librealsense/guiding-eyes/build/CMakeFiles/list_install_components.dir

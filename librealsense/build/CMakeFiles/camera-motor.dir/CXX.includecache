@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tim/librealsense/guiding-eyes/camera-motor.cpp
+wiringPi.h
+-
+softPwm.h
+-
+iostream
+-
+librealsense2/rs.hpp
+-
+algorithm
+-
+fstream
+-
+algorithm
+-
+cstring
+-
+
