@@ -1,3 +1,0 @@
-/home/pi/libroyale-3.17.0.56-LINUX-arm-32Bit/samples/cpp/protoCameraIt1/CMakeFiles/rebuild_cache.dir
-/home/pi/libroyale-3.17.0.56-LINUX-arm-32Bit/samples/cpp/protoCameraIt1/CMakeFiles/edit_cache.dir
-/home/pi/libroyale-3.17.0.56-LINUX-arm-32Bit/samples/cpp/protoCameraIt1/CMakeFiles/sampleRetrieveData.dir
