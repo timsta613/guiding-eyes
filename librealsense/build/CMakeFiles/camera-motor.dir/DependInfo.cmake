@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/tim/librealsense/guiding-eyes/camera-motor.cpp" "/home/tim/librealsense/guiding-eyes/build/CMakeFiles/camera-motor.dir/camera-motor.cpp.o"
+  "/home/tim/guiding-eyes/librealsense/camera-motor.cpp" "/home/tim/guiding-eyes/librealsense/build/CMakeFiles/camera-motor.dir/camera-motor.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

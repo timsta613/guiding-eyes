@@ -54,10 +54,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tim/librealsense/guiding-eyes
+CMAKE_SOURCE_DIR = /home/tim/guiding-eyes/librealsense
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tim/librealsense/guiding-eyes/build
+CMAKE_BINARY_DIR = /home/tim/guiding-eyes/librealsense/build
 
 #=============================================================================
 # Target rules for target CMakeFiles/camera-motor.dir
@@ -66,7 +66,7 @@ CMAKE_BINARY_DIR = /home/tim/librealsense/guiding-eyes/build
 CMakeFiles/camera-motor.dir/all:
 	$(MAKE) -f CMakeFiles/camera-motor.dir/build.make CMakeFiles/camera-motor.dir/depend
 	$(MAKE) -f CMakeFiles/camera-motor.dir/build.make CMakeFiles/camera-motor.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tim/librealsense/guiding-eyes/build/CMakeFiles --progress-num=1,2 "Built target camera-motor"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/tim/guiding-eyes/librealsense/build/CMakeFiles --progress-num=1,2 "Built target camera-motor"
 .PHONY : CMakeFiles/camera-motor.dir/all
 
 # Include target in all.
@@ -76,9 +76,9 @@ all: CMakeFiles/camera-motor.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/camera-motor.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/librealsense/guiding-eyes/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/guiding-eyes/librealsense/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/camera-motor.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/librealsense/guiding-eyes/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/tim/guiding-eyes/librealsense/build/CMakeFiles 0
 .PHONY : CMakeFiles/camera-motor.dir/rule
 
 # Convenience name for target.

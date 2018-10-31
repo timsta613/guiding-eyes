@@ -1,4 +1,4 @@
-# Install script for directory: /home/tim/librealsense/guiding-eyes
+# Install script for directory: /home/tim/guiding-eyes/librealsense
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -47,7 +47,7 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
   if(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION)
     message(FATAL_ERROR "ABSOLUTE path INSTALL DESTINATION forbidden (by caller): ${CMAKE_ABSOLUTE_DESTINATION_FILES}")
   endif()
-file(INSTALL DESTINATION "/usr/local/bin" TYPE EXECUTABLE FILES "/home/tim/librealsense/guiding-eyes/build/camera-motor")
+file(INSTALL DESTINATION "/usr/local/bin" TYPE EXECUTABLE FILES "/home/tim/guiding-eyes/librealsense/build/camera-motor")
   if(EXISTS "$ENV{DESTDIR}/usr/local/bin/camera-motor" AND
      NOT IS_SYMLINK "$ENV{DESTDIR}/usr/local/bin/camera-motor")
     file(RPATH_CHANGE
@@ -68,5 +68,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/tim/librealsense/guiding-eyes/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/tim/guiding-eyes/librealsense/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

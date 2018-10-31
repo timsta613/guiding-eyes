@@ -10,23 +10,38 @@
 #include <softPwm.h>
 #include <iostream>
 #include <librealsense2/rs.hpp>   
-
-// #include <imgui.h>
-//#include "imgui_impl_glfw.h"
+#include <signal.h>
+#include <stdio.h>
+#include <cstdlib>
 
 #include <algorithm>
-/*#include <sstream>
-#include <fstream>
-#include <algorithm>
-#include <cstring>
-*/
+
 float get_depth_scale(rs2::device dev);
 float object_within_depth(const rs2::depth_frame& depth_frame, int x_bot, int x_top, int y_bot, int y_top, float depth_scale, float clipping_dist);
 bool profile_changed(const std::vector<rs2::stream_profile>& current, const std::vector<rs2::stream_profile>& prev);
 
+
+void my_handler(int s) {
+    printf("Caught signal %d\n", s);
+    softPwmWrite(13, 0);
+    delay(100);
+    exit(1);
+}
+
 int main(int argc, char * argv[]) try
 {
     rs2::log_to_console(RS2_LOG_SEVERITY_ERROR);
+    
+    struct sigaction sigIntHandler;
+
+    sigIntHandler.sa_handler = my_handler;
+    sigemptyset(&sigIntHandler.sa_mask);
+    sigIntHandler.sa_flags = 0;
+    sigaction(SIGINT, &sigIntHandler, NULL);
+
+    //zmq::context_t context (1);
+    //zmq::socket_t socket (context, ZMQ_REP);
+    //socket.bind("tcp://*:5555");
 
     //TODO: Determine what is needed here--just some GUI object initializations from rs-align
     //window app(1280, 720, "CPP - Align Example"); // Simple window handling
@@ -46,10 +61,18 @@ int main(int argc, char * argv[]) try
     softPwmCreate(13, 0, 100);
     
     // Define a variable for controlling the distance to clip
+    // TODO: Rename these to something else
     float depth_clipping_distance = 2.f;
+    float three_depth_clipping_distance = 0.75 * depth_clipping_distance;
+    float two_depth_clipping_distance = 0.50 * depth_clipping_distance;
+    float one_depth_clipping_distance = 0.25 * depth_clipping_distance;
+    
+    int frame_count = 0;
     float app_filler = 1.f;
     while(app_filler) // Application still alive?
-    { 
+    {
+        //zmq::message_t msg;
+        //try { 
         rs2::frameset data = pipe.wait_for_frames(); // Wait for next set of frames from the camera
         rs2::depth_frame depth = data.get_depth_frame();
         
@@ -88,7 +111,7 @@ int main(int argc, char * argv[]) try
         int x_bot = static_cast<int>(w/3.0);
         int x_top = static_cast<int>(2.0*w/3.0);
         float b_1 = object_within_depth(depth, x_bot, x_top, y_bot, y_top, depth_scale, depth_clipping_distance);
-        std::cout << b_1 << std::endl;
+        //std::cout << b_1 << std::endl;
 
         bool b = false;
         //TODO: do an investigation into what the min and max distance in the window is, for sanity check
@@ -135,12 +158,48 @@ int main(int argc, char * argv[]) try
         if (b_1 > 0.0) 
         {
             // Set power to be a value from 50-100 depending on the distance away
-            power = static_cast<int>(30+70.0*(depth_clipping_distance-b_1)/depth_clipping_distance);
+            // TODO: Set the frequency of the vibration to be different as well
+            // TODO: Extract this to a helper method
+            bool vib_flag = true;
+            /*
+            if (( b_1 > three_depth_clipping_distance) && (frame_count%8 == 0))
+            {
+                vib_flag = true;
+            } else if ((b_1 > two_depth_clipping_distance) && (frame_count%4 == 0)) 
+            {
+                vib_flag = true;
+            } else if ((b_1 > one_depth_clipping_distance) && (frame_count%2 == 0))
+            {
+                vib_flag = true;
+            } else if (b_1 <= one_depth_clipping_distance)
+            {
+                vib_flag = true;
+            }
+            */ 
+           
+            if (vib_flag) {
+                power = static_cast<int>(30+70.0*(depth_clipping_distance-b_1)/depth_clipping_distance);
+            }
+            std::cout <<"vib_flag: " << vib_flag << ", power: " <<  power << ", dist: " << b_1 << ", frame: " << frame_count << std::endl;
             softPwmWrite(13, power);
         } else
         {
             softPwmWrite(13, power);
+            std::cout << "Not vibrating, no objects detected! " <<  "frame: " << frame_count << std::endl;
         }
+        
+        // Update frame count (used for frequency of vibrations
+        if (frame_count > 89)
+        {
+            frame_count = 0;
+        } else
+        {
+            frame_count = frame_count + 1;
+        }
+        //} 
+        //catch(zmq::error_t& e) {
+            
+        //}
     }
 }
 catch (const rs2::error & e)
