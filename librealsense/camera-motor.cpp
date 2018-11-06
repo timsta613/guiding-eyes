@@ -39,10 +39,6 @@ int main(int argc, char * argv[]) try
     sigIntHandler.sa_flags = 0;
     sigaction(SIGINT, &sigIntHandler, NULL);
 
-    //zmq::context_t context (1);
-    //zmq::socket_t socket (context, ZMQ_REP);
-    //socket.bind("tcp://*:5555");
-
     //TODO: Determine what is needed here--just some GUI object initializations from rs-align
     //window app(1280, 720, "CPP - Align Example"); // Simple window handling
     //ImGui_ImplGlfw_Init(app, false); // ImGui library initialization
@@ -71,39 +67,27 @@ int main(int argc, char * argv[]) try
     float app_filler = 1.f;
     while(app_filler) // Application still alive?
     {
-        //zmq::message_t msg;
-        //try { 
         rs2::frameset data = pipe.wait_for_frames(); // Wait for next set of frames from the camera
         rs2::depth_frame depth = data.get_depth_frame();
         
-        //TODO: Determine what is needed here--makes sure that the device has not been changed
+        //Check to see if the device has been changed
         if(profile_changed(pipe.get_active_profile().get_streams(), profile.get_streams()))
         {
             //If the profile was changed, get the new device and depth_scale
             profile = pipe.get_active_profile();
             depth_scale = get_depth_scale(profile.get_device());
         }
-      
-        // TODO: Do some narrowing of the frame to relevant pixels
-        
-        // TODO: Get the width and height of the depth frame
-	
-        // TODO: Getting the dimensions of the window for rendering purposes--taken from rs-align        
-        /*float w = static_cast<float>(app.width());
-        float h = static_cast<float>(app.height());
-        int w_bottom = static_cast<int>(w/3.0);
-        int w_top = static_cast<int>(2.0*w/3.0);
-        int h_bottom = static_cast<int>(h/3.0);
-        int h_top = static_cast<int>(2.0*h/3.0);
-        */
-        // Pick a top left corner and bottom right corner to look at
+
+        // Narrowing of the frame: pick a top left corner and bottom right corner to look at
+        // Will come into play later when we implement geometry algorithm better
         int top_left_x = 0;
         int top_left_y = 0;
         int bot_right_x = 100;
         int bot_right_y = 100;
 
         // Check to see if there are pixels below a certain threshold, store in a boolean
-        
+        // Get the width and height of the depth frame
+        // Narrow the frame based on some proportion of the frame
         int h = depth.get_height();
         int w = depth.get_width();
         int y_bot = static_cast<int>(h/3.0);
@@ -111,10 +95,9 @@ int main(int argc, char * argv[]) try
         int x_bot = static_cast<int>(w/3.0);
         int x_top = static_cast<int>(2.0*w/3.0);
         float b_1 = object_within_depth(depth, x_bot, x_top, y_bot, y_top, depth_scale, depth_clipping_distance);
-        //std::cout << b_1 << std::endl;
 
         bool b = false;
-        //TODO: do an investigation into what the min and max distance in the window is, for sanity check
+
         /*
         for (int x = top_left_x; x < bot_right_x; x++)
         {
@@ -143,18 +126,9 @@ int main(int argc, char * argv[]) try
         }
         */
 
-        /*
-        //std::cout << "Done looking at the following point" << std::endl;
-        //std::cout << "Max distance is" << std::endl;
-        std::cout << max_dist << std::endl;
-        std::cout << "Min distance is" << std::endl;
-        std::cout << min_dist << std::endl;
-        //std::cout << p_depth_frame[0]*depth_scale << std::endl;
-        b = false;
-        */
-        // TODO: If there are pixels below a certain threshold, make motor vibrate with inverse relation to that distance
+        // If there are pixels below a certain threshold, make motor vibrate with inverse relation to that distance
         int power = 0;
-        // TODO: If the boolean is true, then activate the vibration motor
+        // If the boolean is true, then activate the vibration motor
         if (b_1 > 0.0) 
         {
             // Set power to be a value from 50-100 depending on the distance away
@@ -177,6 +151,7 @@ int main(int argc, char * argv[]) try
             }
             */ 
            
+            // Set power of vibration to be a function of distance of closest object
             if (vib_flag) {
                 power = static_cast<int>(30+70.0*(depth_clipping_distance-b_1)/depth_clipping_distance);
             }
@@ -188,7 +163,7 @@ int main(int argc, char * argv[]) try
             std::cout << "Not vibrating, no objects detected! " <<  "frame: " << frame_count << std::endl;
         }
         
-        // Update frame count (used for frequency of vibrations
+        // Update frame count (used for frequency of vibrations)
         if (frame_count > 89)
         {
             frame_count = 0;
@@ -196,10 +171,6 @@ int main(int argc, char * argv[]) try
         {
             frame_count = frame_count + 1;
         }
-        //} 
-        //catch(zmq::error_t& e) {
-            
-        //}
     }
 }
 catch (const rs2::error & e)
