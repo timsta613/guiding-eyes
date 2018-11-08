@@ -16,6 +16,10 @@
 
 #include <algorithm>
 
+#include <opencv2/opencv.hpp>
+
+using namespace cv;
+
 float get_depth_scale(rs2::device dev);
 float object_within_depth(const rs2::depth_frame& depth_frame, int x_bot, int x_top, int y_bot, int y_top, float depth_scale, float clipping_dist);
 bool profile_changed(const std::vector<rs2::stream_profile>& current, const std::vector<rs2::stream_profile>& prev);
