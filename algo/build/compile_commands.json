@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/tim/guiding-eyes/algo/build",
+  "command": "/usr/bin/c++    -I/home/tim/guiding-eyes/algo/create-dataset -isystem /usr/local/include/opencv4   -std=c++11   -o CMakeFiles/create-dataset.dir/create-dataset.cpp.o -c /home/tim/guiding-eyes/algo/create-dataset.cpp",
+  "file": "/home/tim/guiding-eyes/algo/create-dataset.cpp"
+}
+]

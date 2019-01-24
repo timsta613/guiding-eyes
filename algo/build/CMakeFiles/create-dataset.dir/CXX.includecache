@@ -1,0 +1,40 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/tim/guiding-eyes/algo/create-dataset.cpp
+librealsense2/rs.hpp
+-
+example.hpp
+/home/tim/guiding-eyes/algo/example.hpp
+chrono
+-
+imgui.h
+-
+imgui_impl_glfw.h
+/home/tim/guiding-eyes/algo/imgui_impl_glfw.h
+sstream
+-
+iostream
+-
+iomanip
+-
+
+/home/tim/guiding-eyes/algo/example.hpp
+GLFW/glfw3.h
+-
+string
+-
+sstream
+-
+iostream
+-
+algorithm
+-
+../third-party/stb_easy_font.h
+/home/tim/guiding-eyes/third-party/stb_easy_font.h
+

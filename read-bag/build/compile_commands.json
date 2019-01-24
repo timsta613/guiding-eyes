@@ -1,0 +1,82 @@
+[
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build",
+  "command": "/usr/bin/c++    -I/home/tim/guiding-eyes/read-bag/camera-motor -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include -I/home/tim/guiding-eyes/read-bag/./third-party/tclap/include -I/home/tim/guiding-eyes/read-bag/./third-party/imgui -isystem /usr/local/include/opencv4   -std=c++11   -o CMakeFiles/camera-motor.dir/camera-motor.cpp.o -c /home/tim/guiding-eyes/read-bag/camera-motor.cpp",
+  "file": "/home/tim/guiding-eyes/read-bag/camera-motor.cpp"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build",
+  "command": "/usr/bin/c++    -I/home/tim/guiding-eyes/read-bag/camera-motor -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include -I/home/tim/guiding-eyes/read-bag/./third-party/tclap/include -I/home/tim/guiding-eyes/read-bag/./third-party/imgui -isystem /usr/local/include/opencv4   -std=c++11   -o CMakeFiles/camera-motor.dir/third-party/imgui/imgui.cpp.o -c /home/tim/guiding-eyes/read-bag/third-party/imgui/imgui.cpp",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/imgui/imgui.cpp"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build",
+  "command": "/usr/bin/c++    -I/home/tim/guiding-eyes/read-bag/camera-motor -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include -I/home/tim/guiding-eyes/read-bag/./third-party/tclap/include -I/home/tim/guiding-eyes/read-bag/./third-party/imgui -isystem /usr/local/include/opencv4   -std=c++11   -o CMakeFiles/camera-motor.dir/third-party/imgui/imgui_draw.cpp.o -c /home/tim/guiding-eyes/read-bag/third-party/imgui/imgui_draw.cpp",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/imgui/imgui_draw.cpp"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build",
+  "command": "/usr/bin/c++    -I/home/tim/guiding-eyes/read-bag/camera-motor -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include -I/home/tim/guiding-eyes/read-bag/./third-party/tclap/include -I/home/tim/guiding-eyes/read-bag/./third-party/imgui -isystem /usr/local/include/opencv4   -std=c++11   -o CMakeFiles/camera-motor.dir/third-party/imgui/imgui_impl_glfw.cpp.o -c /home/tim/guiding-eyes/read-bag/third-party/imgui/imgui_impl_glfw.cpp",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/imgui/imgui_impl_glfw.cpp"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/context.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/context.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/context.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/init.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/init.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/init.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/input.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/input.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/input.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/monitor.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/monitor.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/monitor.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/wgl_context.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/wgl_context.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/wgl_context.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/win32_init.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_init.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_init.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/win32_monitor.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_monitor.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_monitor.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/win32_time.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_time.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_time.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/win32_tls.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_tls.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_tls.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/win32_window.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_window.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/win32_window.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/window.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/window.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/window.c"
+},
+{
+  "directory": "/home/tim/guiding-eyes/read-bag/build/third-party/glfw",
+  "command": "/usr/bin/cc   -I/home/tim/guiding-eyes/read-bag/third-party/glfw/include   -std=c11   -o CMakeFiles/glfw3.dir/src/winmm_joystick.c.o   -c /home/tim/guiding-eyes/read-bag/third-party/glfw/src/winmm_joystick.c",
+  "file": "/home/tim/guiding-eyes/read-bag/third-party/glfw/src/winmm_joystick.c"
+}
+]
