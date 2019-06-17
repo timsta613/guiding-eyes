@@ -1,1 +1,0 @@
-/usr/bin/c++    -std=c++11   CMakeFiles/camera-motor.dir/camera-motor.cpp.o  -o camera-motor -rdynamic /usr/local/lib/librealsense2.so /usr/local/lib/libwiringPi.so -lcrypt -Wl,-rpath,/usr/local/lib: 

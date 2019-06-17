@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/home/tim/guiding-eyes/librealsense/build4",
-  "command": "/usr/bin/c++    -I/home/tim/guiding-eyes/librealsense/camera-motor -isystem /usr/local/include/opencv4   -std=c++11   -o CMakeFiles/camera-motor.dir/camera-motor.cpp.o -c /home/tim/guiding-eyes/librealsense/camera-motor.cpp",
-  "file": "/home/tim/guiding-eyes/librealsense/camera-motor.cpp"
-}
-]
