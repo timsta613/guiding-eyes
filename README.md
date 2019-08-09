@@ -1,9 +1,7 @@
-# Guiding Eyes for the Blind Project
+/Users/tzhong/Desktop/Screen\ Shot\ 2019-07-25\ at\ 7.46.36\ PM.png # Guiding Eyes for the Blind Project
 Repository for the Guiding Eyes Project
 
-Welcome to the Guiding Eyes Project
-
-This document describes how to set up the wearable navigation unit used in the Guiding Eyes Project
+This document describes how to set up the wearable navigation unit used in the Guiding Eyes Project, including the 
 
 TODO: Write-up of how to install OS step-by-step
 
@@ -11,13 +9,28 @@ TODO: Write-up of how to run/usage side
 
 ### Materials Used:
 
-TODO: List materials used here 
+Raspberry Pi Model 3B+
+Intel RealSense D435 Camera
+USB hub with at least two ports
+Miuzei Raspberry Pi 3B+ Battery Pack Expansion (or similar, the lithium-ion battery is what's relevant)
+Vibrating Mini Motor Disc
+Electronics-Salon Prototype Breakout PCB Shield Board Kit for Raspberry Pi 3 (or similar)
+DRV2605L Haptic Motor Controller (to drive the vibration motor)
+microSD card (for the Raspberry Pi)
 
 ## Installation Instructions
 The following instructions are used to install packages and libraries needed for this project. Steps 1-4 follow this [tutorial](https://github.com/IntelRealSense/librealsense/blob/master/doc/RaspberryPi3.md) with notes on things to avoid or be aware of
 ### 1. Install Ubuntu MATE on your Raspberry Pi 3
 
 > **Note:** Ubuntu MATE on Raspberry Pi may present a `Kernel not started` error on startup. This can be ignored as it doesn't affect functionality<br/>
+
+To begin with the download of Ubuntu Mate, navigate to the [Ubuntu Mate](https://ubuntu-mate.org/raspberry-pi/) website and find the download button. You will want the version for Raspberry Pi, and the latest version of the Bionic OS.
+
+> **Note:** Ubuntu MATE will only support Bionic until April 2021. If downloading Ubuntu Mate after that date, a new version other than Bionic may be the only one supported. Any version should be fine. 
+
+Once the file is downloaded, you may use Win32 Disk Imager (or a similar disk imager) to write the file to your microSD card.
+
+> **Note:** The Intel RealSense SDK has not been tested with Raspbian, nor does it have documentation of how to use the camera with it.
 
 Download the file from the Ubuntu Mate website
 For Windows, use Win32 Disk Imager or a similar disk imager to write the file to your sd card
